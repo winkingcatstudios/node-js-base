@@ -1,0 +1,23 @@
+{
+  "name": "nodejs-base",
+  "version": "1.0.0",
+  "description": "A base for Node.JS projects, serves as a template and refresher of core features",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/winkingcatstudios/node-js-base.git"
+  },
+  "author": "Dan Kercher",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/winkingcatstudios/node-js-base/issues"
+  },
+  "homepage": "https://github.com/winkingcatstudios/node-js-base#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
