@@ -10,13 +10,11 @@ const flash = require('connect-flash');
 
 const errorController = require('./controllers/error');
 const User = require('./models/user');
-
-const MONGODB_URI =
-  'mongodb+srv://winkingcat:tabletopdontstop@winkingcattabletop.hp3zr.mongodb.net/shop';
+const devFiles = require('./dev-files')
 
 const app = express();
 const store = new MongoDBStore({
-  uri: MONGODB_URI,
+  uri: devFiles.getMongoURI(),
   collection: 'sessions'
 });
 const csrfProtection = csrf();
@@ -66,7 +64,7 @@ app.use(authRoutes);
 app.use(errorController.get404);
 
 mongoose
-  .connect(MONGODB_URI)
+  .connect(devFiles.getMongoURI())
   .then(result => {
     app.listen(3000);
   })
