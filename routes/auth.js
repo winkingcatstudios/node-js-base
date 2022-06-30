@@ -13,7 +13,10 @@ router.get("/signup", authController.getSignup);
 router.post(
   "/login",
   [
-    check("email").isEmail().withMessage("Please enter a valid email"),
+    check("email")
+      .normalizeEmail()
+      .isEmail()
+      .withMessage("Please enter a valid email"),
     check("password")
       .isLength({ min: 12, max: 127 })
       .withMessage("Passwords must be at least 12 and at most 127 characters"),
@@ -25,6 +28,7 @@ router.post(
   "/signup",
   [
     check("email")
+      .normalizeEmail()
       .isEmail()
       .withMessage("Please enter a valid email")
       .custom((value, { req }) => {
