@@ -10,7 +10,16 @@ router.get("/login", authController.getLogin);
 
 router.get("/signup", authController.getSignup);
 
-router.post("/login", authController.postLogin);
+router.post(
+  "/login",
+  [
+    check("email").isEmail().withMessage("Please enter a valid email"),
+    check("password")
+      .isLength({ min: 12, max: 127 })
+      .withMessage("Passwords must be at least 12 and at most 127 characters"),
+  ],
+  authController.postLogin
+);
 
 router.post(
   "/signup",
