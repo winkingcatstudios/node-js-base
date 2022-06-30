@@ -133,6 +133,7 @@ exports.postSignup = (req, res, next) => {
       const user = new User({
         email: email,
         password: hashedPassword,
+        admin: false,
         cart: { items: [] },
       });
       return user.save();
