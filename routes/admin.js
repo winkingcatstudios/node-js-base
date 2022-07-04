@@ -23,11 +23,8 @@ router.post(
   [
     check("title")
       .trim()
-    //   .not()
-    //   .isEmpty()
       .isString()
       .isLength({ min: 3, max: 127 }),
-    check("imageUrl").isURL(),
     check("price").trim().isFloat(),
     check("description").trim().isLength({ min: 3, max: 400 }),
   ],
@@ -43,11 +40,8 @@ router.post(
   [
     check("title")
       .trim()
-    //   .not()
-    //   .isEmpty()
       .isString()
       .isLength({ min: 3, max: 127 }),
-    check("imageUrl").isURL(),
     check("price").trim().isFloat(),
     check("description").trim().isLength({ min: 3, max: 400 }),
   ],
