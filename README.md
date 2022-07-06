@@ -1,2 +1,2 @@
 # node-js-base
-A base for Node.JS projects, serves as a template and refresher of core features
+Node.JS ecommerce site using express, EJS templating, MongoDB, and Stripe
