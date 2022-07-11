@@ -4,3 +4,4 @@ dev-files.js
 images/
 data/invoices/
 nodemon.json
+access.log
